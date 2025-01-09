@@ -1,0 +1,23 @@
+# Use Maven image to build the project
+FROM maven:3.8.4-openjdk-17 AS builder
+WORKDIR /app
+
+# Copy source code and pom.xml
+COPY ./src ./src
+COPY pom.xml .
+
+# Build the project using Maven
+RUN mvn clean package -DskipTests
+
+# Use OpenJDK image to run the application
+FROM openjdk:17-jdk-alpine
+VOLUME /tmp
+
+# Argument for the JAR file
+ARG JAR_FILE=target/*.jar
+
+# Copy the JAR file into the container
+COPY ${JAR_FILE} gateway-service.jar
+
+# Set the entry point
+ENTRYPOINT ["java", "-jar", "/gateway-service.jar"]
