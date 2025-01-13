@@ -7,10 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="EurekaServer" />
-        <module name="Gateway (1)" />
         <module name="Gateway (2)" />
+        <module name="Gateway (1)" />
       </profile>
-      <profile name="Annotation profile for Voiture" enabled="true">
+      <profile name="Annotation profile for client" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -18,8 +18,8 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
         <module name="Voiture (1)" />
-        <module name="Voiture (2)" />
         <module name="client (1)" />
+        <module name="Voiture (2)" />
         <module name="client (2)" />
       </profile>
     </annotationProcessing>
